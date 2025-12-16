@@ -1,20 +1,20 @@
 {
-  "name": "Aqar_app ",
-  "short_name": "عقاراتي",
-  "description": "تطبيق عقاراتي لعرض وبيع وشراء العقارات بسهولة.",
+  "name": "Digital Store",
+  "short_name": "Store",
+  "description": "متجر منتجات رقمية",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#0ea5e9",
-  "orientation": "portrait-primary",
+  "theme_color": "#2563eb",
+  "orientation": "portrait",
   "icons": [
     {
-      "src": "/public/logo.png",
+      "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icons/icon-512x512.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
