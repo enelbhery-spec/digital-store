@@ -1,6 +1,7 @@
+// مثال بسيط: تأكد أن لا يوجد output: 'export'
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
-};
-
-export default nextConfig;
+  // احذف أو لا تضف: output: 'export'
+  // أي إعدادات أخرى تبقى كما هي
+}
