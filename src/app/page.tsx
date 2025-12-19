@@ -1,134 +1,186 @@
-import { products } from "@/data/products";
-
-export default function HomePage() {
+export default function Home() {
   return (
-    <>
-      {/* Header */}
-      <header style={styles.header}>
-        <div style={styles.headerContent}>
-          <img
-            src="/logo.png"
-            alt="Digital Store App"
-            style={styles.logo}
-          />
-          <span style={styles.appName}>Digital Store App</span>
-        </div>
-      </header>
-      {/* Content */}
-      <main style={styles.container}>
-        <h2 style={styles.subtitle}>متجر المنتجات الرقمية</h2>
-        <div style={styles.grid}>
-          {products.map((product) => (
-            <div key={product.id} style={styles.card}>
-              <h2 style={styles.productTitle}>{product.title}</h2>
-              <p style={styles.description}>{product.description}</p>
+    <main className="bg-gray-50 text-gray-800">
 
-              <div style={styles.footer}>
-                  {product.price} {product.currency === "EGP" ? "جنيه" : ""}
+      {/* ================= HERO SECTION ================= */}
+      <section className="relative bg-gradient-to-bl from-green-600 via-green-500 to-emerald-500 text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-                <a
-                  href={`https://wa.me/201021732703?text=${encodeURIComponent(
-                 product.whatsappText
-                   )}`}
-               target="_blank"
-                   rel="noopener noreferrer"
-              style={styles.button}
-                >
-              اطلب عبر واتساب
-                </a>
-              </div>
+          {/* Text */}
+          <div>
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+              متجر المنتجات الرقمية
+              <br />
+              <span className="text-yellow-300">
+                استلم منتجك فورًا
+              </span>
+            </h1>
+
+            <p className="text-lg text-white/90 mb-8 leading-relaxed">
+              نوفر لك منتجات رقمية جاهزة للاستخدام مثل الملفات والأدوات
+              الذكية، بدون شحن، بدون انتظار، وبأسعار مناسبة للجميع.
+            </p>
+
+            <div className="flex gap-4 flex-wrap">
+              <a
+                href="/products" className="hover:text-green-600 transition"
+                className="bg-white text-green-600 px-7 py-4 rounded-xl font-bold hover:bg-gray-100 transition"
+              >
+                تصفح المنتجات
+              </a>
+
+              <a
+                href="https://wa.me/201021732703?text=مرحبًا،%20أرغب%20في%20شراء%20منتج"
+                target="_blank"
+                className="border border-white/80 px-7 py-4 rounded-xl font-bold hover:bg-white hover:text-green-600 transition"
+              >
+                اطلب عبر واتساب
+              </a>
             </div>
-          ))}
+
+            {/* Trust Badges */}
+            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
+              {[
+                "تسليم فوري",
+                "بدون تسجيل",
+                "دعم واتساب",
+                "منتجات موثوقة",
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white/10 backdrop-blur rounded-lg py-2 text-center font-semibold"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Card */}
+          <div>
+            <div className="bg-white rounded-3xl shadow-2xl p-8 text-gray-800">
+              <h3 className="text-xl font-bold mb-4">
+                كيف يعمل المتجر؟
+              </h3>
+              <ul className="space-y-3 text-gray-600">
+                <li>✔ اختر المنتج المناسب</li>
+                <li>✔ اضغط على طلب عبر واتساب</li>
+                <li>✔ أتمم الدفع بسهولة</li>
+                <li>✔ استلم رابط التحميل فورًا</li>
+              </ul>
+
+
+            </div>
+          </div>
+
         </div>
-      </main>
-    </>
+      </section>
+
+      {/* ================= WHAT WE OFFER ================= */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">
+            ماذا نقدم؟
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "منتجات رقمية جاهزة",
+                desc: "ملفات وأدوات قابلة للاستخدام الفوري",
+              },
+              {
+                title: "تسليم فوري",
+                desc: "بعد الدفع يصلك رابط التحميل مباشرة",
+              },
+              {
+                title: "دعم واتساب",
+                desc: "تواصل مباشر وسريع عند الحاجة",
+              },
+              {
+                title: "أسعار مناسبة",
+                desc: "منتجات عالية القيمة بسعر في المتناول",
+              },
+              {
+                title: "سهولة الاستخدام",
+                desc: "بدون تسجيل أو خطوات معقدة",
+              },
+              {
+                title: "خصوصية وأمان",
+                desc: "لا نحتفظ بأي بيانات شخصية",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-white p-8 rounded-2xl shadow hover:shadow-lg transition"
+              >
+                <h3 className="text-xl font-bold mb-3 text-green-600">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= HOW IT WORKS ================= */}
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">
+            كيف تحصل على المنتج؟
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 text-center">
+            {[
+              "اختر المنتج",
+              "اضغط اطلب",
+              "أرسل رسالة واتساب",
+              "أتمم الدفع",
+              "استلم الرابط فورًا",
+            ].map((step, i) => (
+              <div
+                key={i}
+                className="border rounded-xl p-6 hover:border-green-500 transition"
+              >
+                <div className="text-3xl font-bold text-green-600 mb-2">
+                  {i + 1}
+                </div>
+                <p className="font-semibold">{step}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CTA ================= */}
+      <section className="py-20 bg-green-600 text-white text-center">
+        <h2 className="text-4xl font-bold mb-4">
+          جاهز تبدأ؟
+        </h2>
+        <p className="mb-8 text-lg">
+          اختر منتجك الآن واستلمه فورًا
+        </p>
+        <a
+          href="https://wa.me/201021732703"
+          target="_blank"
+          className="bg-white text-green-600 px-10 py-4 rounded-xl font-bold hover:bg-gray-100 transition"
+        >
+          تواصل عبر واتساب
+        </a>
+      </section>
+
+      {/* ================= WHATSAPP FLOAT ================= */}
+      <a
+        href="https://wa.me/20121732703"
+        target="_blank"
+        className="fixed bottom-5 right-5 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-600 transition"
+      >
+        واتساب
+      </a>
+
+    </main>
   );
 }
-const styles: any = {
-  header: {
-    position: "fixed",
-    top: 0,
-    right: 0,
-    left: 0,
-    height: "64px",
-    backgroundColor: "#ffffff",
-    boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
-    zIndex: 1000,
-    display: "flex",
-    alignItems: "center",
-  },
-  headerContent: {
-    maxWidth: "1200px",
-    width: "100%",
-    margin: "0 auto",
-    padding: "0 16px",
-    display: "flex",
-    alignItems: "center",
-    gap: "10px",
-    direction: "rtl",
-  },
-  logo: {
-    width: "36px",
-    height: "36px",
-    borderRadius: "8px",
-  },
-  appName: {
-    fontSize: "16px",
-    fontWeight: "bold",
-  },
-  container: {
-    padding: "96px 16px 24px", // مهم عشان الهيدر الثابت
-    maxWidth: "1200px",
-    margin: "auto",
-    fontFamily: "system-ui, -apple-system",
-  },
-  subtitle: {
-    textAlign: "right",
-    color: "#6b7280",
-    marginBottom: "20px",
-    fontSize: "14px",
-  },
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "1fr",
-    gap: "16px",
-  },
-  card: {
-    borderRadius: "14px",
-    padding: "16px",
-    backgroundColor: "#ffffff",
-    boxShadow: "0 4px 14px rgba(0,0,0,0.08)",
-  },
-  productTitle: {
-    fontSize: "18px",
-    marginBottom: "8px",
-    textAlign: "right",
-  },
-  description: {
-    fontSize: "14px",
-    color: "#4b5563",
-    lineHeight: "1.6",
-    textAlign: "right",
-  },
-  footer: {
-    marginTop: "14px",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    direction: "rtl",
-    gap: "10px",
-  },
-  price: {
-    fontSize: "16px",
-    fontWeight: "bold",
-  },
-  button: {
-    backgroundColor: "#2563eb",
-    color: "#ffffff",
-    padding: "10px 16px",
-    borderRadius: "10px",
-    textDecoration: "none",
-    fontSize: "14px",
-    textAlign: "center",
-  },
-};

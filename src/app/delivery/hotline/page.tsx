@@ -1,87 +1,12 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Store | دليل الخطوط الساخنة</title>
+"use client";
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f3f4f6;
-      padding: 20px;
-    }
-    .container {
-      background: #fff;
-      max-width: 450px;
-      margin: auto;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,.1);
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    input {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      margin-top: 10px;
-    }
-    .result {
-      margin-top: 15px;
-    }
-    .item {
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 10px;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    .call {
-      display: block;
-      margin-top: 8px;
-      background: #16a34a;
-      color: white;
-      padding: 10px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-    footer {
-      margin-top: 15px;
-      font-size: 12px;
-      color: #666;
-      text-align: center;
-    }
-  </style>
-</head>
+import { useState } from "react";
+import AppInstallLoader from "@/components/AppInstallLoader";
+import DeviceLock from "@/components/DeviceLock";
 
-<body>
-
-<div class="container">
-  <h2>📞 دليل الخطوط الساخنة</h2>
-
-  <input
-    id="search"
-    placeholder="اكتب اسم الجهة (مثال: بنك – إسعاف – كهرباء)"
-    oninput="search()"
-  >
-
-  <div id="output" class="result">
-    <small>🔎 ابدأ بالكتابة لعرض النتائج</small>
-  </div>
-
-  <footer>
-    Digital Store App
-  </footer>
-</div>
-
-<script>
-  const hotlines = [
-
-    /* ===== البنوك (30) ===== */
+/* ================== DATA ================== */
+const hotlines = [
+  /* ===== البنوك (30) ===== */
     { name: "البنك الأهلي المصري", phone: "19623" },
     { name: "بنك مصر", phone: "19888" },
     { name: "بنك القاهرة", phone: "16990" },
@@ -191,39 +116,94 @@
     { name: "خدمة النقل الذكي", phone: "136" },
     { name: "الدعم الفني العام", phone: "155" }
 
-  ];
+];
 
-  function normalize(text) {
-    return text.replace(/\s+/g, "").toLowerCase();
-  }
+/* ================== PAGE ================== */
+export default function HotlinePage() {
+  const [query, setQuery] = useState("");
 
-  function search() {
-    const value = normalize(document.getElementById("search").value);
-    const output = document.getElementById("output");
+  const normalizedQuery = query.replace(/\s+/g, "").toLowerCase();
 
-    if (!value) {
-      output.innerHTML = "<small>🔎 ابدأ بالكتابة لعرض النتائج</small>";
-      return;
-    }
+  const filtered =
+    normalizedQuery.length < 2
+      ? []
+      : hotlines.filter((h) =>
+          h.name.replace(/\s+/g, "").toLowerCase().includes(normalizedQuery)
+        );
 
-    const results = hotlines.filter(h =>
-      normalize(h.name).includes(value)
-    );
+  return (
+    <DeviceLock>
+      <AppInstallLoader>
+        <div className="min-h-screen bg-gray-50 px-4 py-10">
+          <div className="max-w-xl mx-auto bg-white rounded-2xl shadow p-6">
 
-    if (results.length === 0) {
-      output.innerHTML = "<span style='color:red'>❌ لا توجد نتائج</span>";
-      return;
-    }
+            <h1 className="text-2xl font-extrabold mb-4 text-center">
+              📞 دليل الخطوط الساخنة
+            </h1>
 
-    output.innerHTML = results.map(r => `
-      <div class="item">
-        <strong>${r.name}</strong><br>
-        <span style="font-size:18px;color:green">${r.phone}</span>
-        <a class="call" href="tel:${r.phone}">📞 اتصال مباشر</a>
-      </div>
-    `).join("");
-  }
-</script>
+            <p className="text-gray-600 mb-6 text-center text-sm">
+              هذا المنتج يعمل فورًا بعد الدفع
+              <br />
+              يُفضّل إضافته للشاشة الرئيسية لاستخدامه كتطبيق
+            </p>
 
-</body>
-</html>
+            {/* البحث */}
+            <input
+              type="text"
+              placeholder="اكتب اسم الجهة (بنك – إسعاف – كهرباء...)"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className="w-full p-3 border rounded-xl mb-4 text-right focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+
+            {/* رسائل إرشادية */}
+            {query.trim() === "" && (
+              <p className="text-center text-gray-400 text-sm">
+                🔎 ابدأ بكتابة اسم الجهة
+              </p>
+            )}
+
+            {query.trim().length === 1 && (
+              <p className="text-center text-gray-400 text-sm">
+                ✍️ اكتب حرفين على الأقل
+              </p>
+            )}
+
+            {query.trim().length >= 2 && filtered.length === 0 && (
+              <p className="text-center text-red-500 text-sm">
+                ❌ لا توجد نتائج
+              </p>
+            )}
+
+            {/* النتائج */}
+            <div className="space-y-3 mt-4">
+              {filtered.map((item, index) => (
+                <div key={index} className="border rounded-xl p-4 text-center">
+                  <h3 className="font-bold mb-1">{item.name}</h3>
+
+                  <p className="text-green-600 font-bold text-lg">
+                    {item.phone}
+                  </p>
+
+                  <a
+                    href={`tel:${item.phone}`}
+                    className="block mt-2 bg-green-600 text-white py-2 rounded-xl hover:bg-green-700 transition"
+                  >
+                    📞 اتصال مباشر
+                  </a>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-xs text-gray-400 mt-8 text-center">
+              🔒 هذا المنتج مخصص للاستخدام الشخصي فقط
+              <br />
+              لا يُسمح بمشاركة الرابط
+            </p>
+
+          </div>
+        </div>
+      </AppInstallLoader>
+    </DeviceLock>
+  );
+}

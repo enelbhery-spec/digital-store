@@ -3,9 +3,10 @@ export type Product = {
   title: string;
   description: string;
   price: number;
-  currency: "EGP"; // نوع العملة (جنيه مصري)
+  currency: "EGP";
   whatsappText: string;
-  link?: string; // رابط المنتج بعد الشراء
+  image: string; // 👈 صورة المنتج
+  link?: string;
 };
 
 export const products: Product[] = [
@@ -16,6 +17,6 @@ export const products: Product[] = [
     price: 25,
     currency: "EGP",
     whatsappText: "أريد شراء دليل الخطوط الساخنة",
-
+    image: "/products/hotline-guide.png"
   },
 ];

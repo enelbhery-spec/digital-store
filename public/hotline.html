@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Store | دليل الخطوط الساخنة</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  background: #ffffff;
+  max-width: 480px;
+  margin: auto;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 6px;
+  font-size: 22px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 14px 40px 14px 14px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+.search-box span {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #6b7280;
+}
+
+.result {
+  margin-top: 18px;
+}
+
+.item {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.item strong {
+  font-size: 15px;
+}
+
+.phone {
+  display: block;
+  margin-top: 4px;
+  font-size: 18px;
+  color: #15803d;
+  font-weight: bold;
+}
+
+.call {
+  display: block;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: white;
+  padding: 12px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: transform .2s;
+}
+
+.call:active {
+  transform: scale(.97);
+}
+
+footer {
+  margin-top: 18px;
+  font-size: 12px;
+  color: #9ca3af;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>📞 دليل الخطوط الساخنة</h2>
+  <div class="subtitle">خدمة سريعة للوصول إلى أرقام الطوارئ والخدمات</div>
+
+  <div class="search-box">
+    <input id="search" placeholder="اكتب اسم الجهة..." oninput="search()">
+    <span>🔍</span>
+  </div>
+
+  <div id="output" class="result">
+    <small>ابدأ بالكتابة لعرض النتائج</small>
+  </div>
+
+  <footer>
+    Digital Store App ©
+  </footer>
+</div>
+
+<script>
+const hotlines = [
+  { name: "البنك الأهلي المصري", phone: "19623" },
+  { name: "بنك مصر", phone: "19888" },
+  { name: "الإسعاف", phone: "123" },
+  { name: "الشرطة", phone: "122" },
+  { name: "الكهرباء", phone: "121" },
+  { name: "الغاز", phone: "129" }
+  // ⬅️ ضع باقي البيانات كما هي من ملفك الأصلي بدون تغيير
+];
+
+function normalize(text) {
+  return text.replace(/\s+/g, "").toLowerCase();
+}
+
+function search() {
+  const value = normalize(document.getElementById("search").value);
+  const output = document.getElementById("output");
+
+  if (!value) {
+    output.innerHTML = "<small>ابدأ بالكتابة لعرض النتائج</small>";
+    return;
+  }
+
+  const results = hotlines.filter(h =>
+    normalize(h.name).includes(value)
+  );
+
+  if (results.length === 0) {
+    output.innerHTML = "<span style='color:#dc2626'>❌ لا توجد نتائج</span>";
+    return;
+  }
+
+  output.innerHTML = results.map(r => `
+    <div class="item">
+      <strong>${r.name}</strong>
+      <span class="phone">${r.phone}</span>
+      <a class="call" href="tel:${r.phone}">📞 اتصال مباشر</a>
+    </div>
+  `).join("");
+}
+</script>
+
+</body>
+</html>
