@@ -23,7 +23,7 @@ export default function Home() {
 
             <div className="flex gap-4 flex-wrap">
               <a
-                href="/products" className="hover:text-green-600 transition"
+                href="/products"
                 className="bg-white text-green-600 px-7 py-4 rounded-xl font-bold hover:bg-gray-100 transition"
               >
                 تصفح المنتجات
