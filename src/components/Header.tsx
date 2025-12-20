@@ -29,7 +29,7 @@ export default function Header() {
 
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/201XXXXXXXXX?text=مرحبًا،%20أرغب%20في%20الاستفسار"
+          href="https://wa.me/201021732703?text=مرحبًا،%20أرغب%20في%20الاستفسار"
           target="_blank"
           className="bg-green-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-700 transition"
         >

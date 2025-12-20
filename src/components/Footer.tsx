@@ -71,7 +71,7 @@ export default function Footer() {
             للدعم أو الاستفسار:
           </p>
           <a
-            href="https://wa.me/201021732703"
+            href="https://wa.me/201234567890?text"
             target="_blank"
             className="inline-block bg-green-600 text-white px-5 py-3 rounded-xl font-bold hover:bg-green-700 transition"
           >

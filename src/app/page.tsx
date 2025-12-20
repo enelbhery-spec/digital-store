@@ -164,7 +164,7 @@ export default function Home() {
           اختر منتجك الآن واستلمه فورًا
         </p>
         <a
-          href="https://wa.me/201021732703"
+          href="https://wa.me/201234567890?text"
           target="_blank"
           className="bg-white text-green-600 px-10 py-4 rounded-xl font-bold hover:bg-gray-100 transition"
         >
@@ -174,7 +174,7 @@ export default function Home() {
 
       {/* ================= WHATSAPP FLOAT ================= */}
       <a
-        href="https://wa.me/20121732703"
+        href="https://wa.me/201234567890?text"
         target="_blank"
         className="fixed bottom-5 right-5 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-600 transition"
       >

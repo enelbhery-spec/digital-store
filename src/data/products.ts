@@ -16,7 +16,7 @@ export const products: Product[] = [
     description: "الوصول السريع لأرقام البنوك والجهات الرسمية",
     price: 25,
     currency: "EGP",
-    whatsappText: "أريد شراء دليل الخطوط الساخنة",
+    whatsappText: "أريد شراء هذا المنتج",
     image: "/products/hotline-guide.png"
   },
 ];

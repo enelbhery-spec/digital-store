@@ -39,7 +39,7 @@ export default function ProductsPage() {
 
               {/* الطلب عبر واتساب */}
               <a
-                href={`https://wa.me/01021732703?text=${encodeURIComponent(
+                href={`https://wa.me/201021732703?text=${encodeURIComponent(
                   product.whatsappText
                 )}`}
                 target="_blank"
