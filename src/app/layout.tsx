@@ -49,7 +49,7 @@ export default function RootLayout({
 
         {/* ✅ تسجيل Service Worker */}
         <RegisterSW />
-
+<meta name="google-site-verification" content="7XY4QFlcbO13HsbJ3M-4Pl1l9A4Pbbe-GltnYncvINA" />
         <Header />
 
         <main className="flex-1">
