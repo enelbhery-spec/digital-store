@@ -23,9 +23,19 @@ export const products: Product[] = [
     id: 2,
     title: "البحث الفورى للمواقع – اتصال مباشر",
     description: "الوصول السريع لأرقام البنوك والجهات الرسمية",
-    price: 50,
+    price: 25,
     currency: "EGP",
-    whatsappText: "أريد شراء هذا المنتج - البخث الفورى للمواقع - 50 ج ",
+    whatsappText: "أريد شراء هذا المنتج - البحث الفورى للمواقع - 25 ج ",
     image: "/products/OneTap Links.png"
   },
+    {
+    id: 3,
+    title: "  25 وجبات رائعة فى صفحة واحدة دليل الوجبات اليومية بالفيديو",
+    description: "(فطور – غداء – عشاء | مقادير + طريقة التحضير)",
+    price: 25,
+    currency: "EGP",
+    whatsappText: "أريد شراء هذا المنتج - وجبات رائفة - 25 ج ",
+    image: "/products/meals.png"
+  },
+
 ];
