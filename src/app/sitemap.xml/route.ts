@@ -7,6 +7,11 @@ export async function GET() {
     "",
     "/products",
     "/delivery/hotline",
+    "/delivery/meals",
+    "/delivery/OneTapLinksArabic",
+    "/delivery/egyptStores",
+    "/delivery/ComputerStores",
+
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
