@@ -6,8 +6,8 @@ import RegisterSW from "@/components/RegisterSW";
 
 export const metadata: Metadata = {
   title: {
-    default: "Digital Store | متجر المنتجات الرقمية",
-    template: "%s | Digital Store",
+    default: "Digital Store - smart searching  - smart searching | متجر المنتجات الرقمية",
+    template: "%s | Digital Store - smart searching ",
   },
   description: "متجر منتجات رقمية – استلم منتجك فورًا بدون تعقيد",
   keywords: [
@@ -15,10 +15,10 @@ export const metadata: Metadata = {
     "متجر رقمي",
     "خدمات رقمية",
     "Digital Products",
-    "Digital Store",
+    "Digital Store - smart searching ",
   ],
-  authors: [{ name: "Digital Store" }],
-  creator: "Digital Store",
+  authors: [{ name: "Digital Store - Smart Search " }],
+  creator: "Digital Store - Smart Search ",
 
   manifest: "/manifest.json",
 
@@ -27,11 +27,11 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Digital Store | متجر المنتجات الرقمية",
+    title: "Digital Store - smart searching  | متجر المنتجات الرقمية",
     description: "خدمات ومنتجات رقمية مجانية وسريعة",
     type: "website",
     locale: "ar_EG",
-    siteName: "Digital Store",
+    siteName: "Digital Store - smart searching ",
   },
 
   other: {
