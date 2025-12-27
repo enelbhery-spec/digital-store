@@ -12,13 +12,12 @@ export default function Home() {
               متجر المنتجات الرقمية
               <br />
               <span className="text-yellow-300">
-                استلم منتجك فورًا
+                استخدم البحث فورًا
               </span>
             </h1>
 
             <p className="text-lg text-white/90 mb-8 leading-relaxed">
-              نوفر لك منتجات رقمية جاهزة للاستخدام مثل الملفات والأدوات
-              الذكية، بدون شحن، بدون انتظار، وبأسعار مناسبة للجميع.
+              نوفر لك خدمات ومنتجات رقمية مجانية وسريعة.
             </p>
 
             <div className="flex gap-4 flex-wrap">
@@ -58,9 +57,9 @@ export default function Home() {
               </h3>
               <ul className="space-y-3 text-gray-600">
                 <li>✔ اختر المنتج المناسب</li>
-                <li>✔ اضغط على طلب عبر واتساب</li>
-                <li>✔ أتمم الدفع بسهولة</li>
-                <li>✔ استلم رابط التحميل فورًا</li>
+                <li>✔ اضغط على افتح المنتج </li>
+                <li>✔ بدون الدفع - مجانا</li>
+                <li>✔ ااستعمل البحث  فورًا</li>
               </ul>
 
 
@@ -84,16 +83,16 @@ export default function Home() {
                 desc: "ملفات وأدوات قابلة للاستخدام الفوري",
               },
               {
-                title: "تسليم فوري",
-                desc: "بعد الدفع يصلك رابط التحميل مباشرة",
+                title: "استخدام فوري",
+                desc: "يتم فتح البحث مباشرة",
               },
               {
                 title: "دعم واتساب",
                 desc: "تواصل مباشر وسريع عند الحاجة",
               },
               {
-                title: "أسعار مناسبة",
-                desc: "منتجات عالية القيمة بسعر في المتناول",
+                title: "المنتجات مجانا",
+                desc: "منتجات عالية القيمة مجانا",
               },
               {
                 title: "سهولة الاستخدام",
@@ -124,7 +123,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">
-            كيف تحصل على المنتج؟
+            كيف تحصل على منتج مدفوع؟
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6 text-center">
