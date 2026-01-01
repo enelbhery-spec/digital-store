@@ -6,7 +6,7 @@ export default function AdComponent() {
   useEffect(() => {
     // التأكد من أن الكود يعمل فقط في جانب العميل (Browser)
     const script = document.createElement('script');
-    script.src = "//pl28274737.highratecpm.com/68452107c89d06df62ec5e7bed215ec8/invoke.js";
+    script.src="https://pl28375236.effectivegatecpm.com/68452107c89d06df62ec5e7bed215ec8/invoke.js";
     script.async = true;
     script.setAttribute('data-cfasync', 'false');
 
