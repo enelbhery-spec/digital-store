@@ -9,7 +9,7 @@ export default function Home() {
           {/* Text */}
           <div>
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-              متجر المنتجات الرقمية
+              البحث الذكى الرقمى
               <br />
               <span className="text-yellow-300">
                 استخدم البحث فورًا
