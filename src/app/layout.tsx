@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import RegisterSW from "@/components/RegisterSW";
-import AdsterraResponsive from "@/components/AdsterraResponsive";
 
 export const metadata: Metadata = {
   title: {
@@ -57,20 +56,13 @@ export default function RootLayout({
         {/* ===== Header ===== */}
         <Header />
 
-        {/* ===== Adsterra | أعلى المحتوى ===== */}
-        <section className="w-full flex justify-center my-4">
-          <AdsterraResponsive />
-        </section>
 
         {/* ===== Main Content ===== */}
         <main className="flex-1 container mx-auto px-4">
           {children}
         </main>
 
-        {/* ===== Adsterra | قبل الفوتر (اختياري) ===== */}
-        <section className="w-full flex justify-center my-6">
-          <AdsterraResponsive />
-        </section>
+
 
         {/* ===== Footer ===== */}
         <Footer />
