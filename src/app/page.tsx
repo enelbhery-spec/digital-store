@@ -69,6 +69,28 @@ export default function Home() {
 
         </div>
       </section>
+      {/* ================= SMART SEARCH SEO SECTION ================= */}
+<section className="py-16 bg-white">
+  <div className="max-w-5xl mx-auto px-4 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
+      Smart Search – محرك البحث الذكي
+    </h2>
+
+    <p className="text-gray-600 leading-relaxed mb-8">
+      Smart Search هو محرك بحث ذكي يساعدك على الوصول السريع
+      إلى الخدمات والمنتجات الرقمية داخل موقع واحد
+      بنتائج دقيقة وسهلة الاستخدام.
+    </p>
+
+    <a
+      href="/smart-search"
+      className="inline-block bg-green-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-green-700 transition"
+    >
+      استخدم Smart Search الآن
+    </a>
+  </div>
+</section>
+
 
       {/* ================= WHAT WE OFFER ================= */}
       <section className="py-20 bg-gray-50">
@@ -163,7 +185,9 @@ export default function Home() {
           className="bg-white text-green-600 px-10 py-4 rounded-xl font-bold hover:bg-gray-100 transition"
         >
           ابدا بتصفح المنتجات
+
         </a>
+
       </section>
 
       {/* ================= WHATSAPP FLOAT ================= */}
