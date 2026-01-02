@@ -54,15 +54,15 @@ export default function RootLayout({
 
         <Header />
 
-        {/* 🔹 إعلان أعلى المحتوى */}
-        <AdsterraResponsive />
-
         <main className="flex-1">
+
+          {/* 🔹 إعلان Adsterra داخل المحتوى (لن يظهر أسفل الفوتر) */}
+          <div className="w-full flex justify-center my-6">
+            <AdsterraResponsive />
+          </div>
+
           {children}
         </main>
-
-        {/* 🔹 إعلان أسفل المحتوى (اختياري) */}
-        <AdsterraResponsive />
 
         <Footer />
         <RegisterSW />
