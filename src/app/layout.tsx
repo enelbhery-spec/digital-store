@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import RegisterSW from "@/components/RegisterSW";
 import Script from "next/script";
-import AdsterraBanner from "@/components/AdsterraBanner";
+import AdsterraResponsive from "@/components/AdsterraResponsive";
 
 export const metadata: Metadata = {
   title: {
@@ -45,6 +45,7 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({
+    <AdsterraResponsive />
   children,
 }: {
   children: React.ReactNode;
@@ -52,33 +53,16 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" className="scroll-smooth">
       <head>
-        {/* الطريقة الصحيحة لإضافة سكريبت Adsterra في Next.js */}
-        <Script
-          src="https://pl28375284.effectivegatecpm.com/a2/d8/f9/a2d8f911d27d875162419ab2c20d9e9b.js"
-          strategy="afterInteractive"
-          data-cfasync="false"
-          async
-        />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGK2Z5C8W8"></script>
+
 
       </head>
       <body className="min-h-screen flex flex-col bg-gray-50 text-gray-800 font-sans antialiased">
-       {/* 🔴 إعلان أعلى الصفحة */}
-        <div style={{ textAlign: "center", margin: "10px 0" }}>
-          <AdsterraBanner />
-        </div>
 
-        {/* حاوية الإعلان: يفضل وضعها في مكان استراتيجي، هنا ستظهر في أعلى الصفحة */}
-         <div id="container-a2d8f911d27d875162419ab2c20d9e9b"></div>
-
-        <RegisterSW />
         <Header />
 
         <main className="flex-1">
           {children}
-          {/* 🔴 إعلان أسفل الصفحة (اختياري) */}
-        <div style={{ textAlign: "center", margin: "20px 0" }}>
-          <AdsterraBanner />
+
         </div>
         </main>
 
