@@ -2,7 +2,7 @@ import requests
 import xml.etree.ElementTree as ET
 
 sites = [
-    "https://www.extracode.online",
+    "https://digetal-app.vercel.app/eg",
     
 ]
 
