@@ -3,8 +3,10 @@ import { createClient } from '@supabase/supabase-js';
 import { matchAndGetPrice } from '@/app/actions/matchProduct';
 
 // ملاحظة: نستخدم SERVICE_ROLE_KEY للوصول الكامل لقاعدة البيانات
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
-
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
+);
 async function runAutoMatch(tableType) {
   console.log(`بدء عملية المطابقة التلقائية لجدول: ${tableType}`);
 
