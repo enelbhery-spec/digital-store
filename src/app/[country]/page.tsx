@@ -21,12 +21,12 @@ export async function generateMetadata({
 
   const title =
     countrySlug === "eg"
-      ? "تريند ستور مصر | أفضل المنتجات الرقمية والكوبونات والعروض"
+      ? "تريند ستور مصر | أفضل المنتجات والعروض"
       : "Trend Store";
 
   const description =
     countrySlug === "eg"
-      ? "اكتشف أفضل المنتجات الرقمية والكوبونات والعروض الحصرية مع أحدث المقالات وتجارب العملاء."
+      ? "اكتشف أفضل المنتجات والكوبونات والعروض الحصرية مع أحدث المقالات وتجارب العملاء."
       : "Discover the best digital products and exclusive offers.";
 
   const canonical = `https://digetal-app.vercel.app/${countrySlug}`;

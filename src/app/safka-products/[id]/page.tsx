@@ -46,7 +46,7 @@ export default async function ProductDetailsPage({ params }: Props) {
     costPrice > salePrice && salePrice > 0
       ? Math.round(((costPrice - salePrice) / costPrice) * 100)
       : 0;
-      const siteUrl = "https://www.extracode.online";
+      const siteUrl = "https://digetal-app.vercel.app";
 
   const productUrl = `${siteUrl}/safka-products/${product.safka_id}`;
   const thumbnailUrl = mainImage;
