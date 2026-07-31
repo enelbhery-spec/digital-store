@@ -29,7 +29,7 @@ export async function generateMetadata({
       ? "اكتشف أفضل المنتجات الرقمية والكوبونات والعروض الحصرية مع أحدث المقالات وتجارب العملاء."
       : "Discover the best digital products and exclusive offers.";
 
-  const canonical = `https://www.extracode.online/${countrySlug}`;
+  const canonical = `https://digetal-app.vercel.app/${countrySlug}`;
 
   return {
     title,
@@ -50,7 +50,7 @@ export async function generateMetadata({
       siteName: "ExtraCode",
       images: [
         {
-          url: "https://www.extracode.online/logo.png",
+          url: "https://digetal-app.vercel.app/logo.png",
           width: 1200,
           height: 630,
           alt: title,
@@ -61,7 +61,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: ["https://www.extracode.online/logo.png"],
+      images: ["https://digetal-app.vercel.app/logo.png"],
     },
   };
 }

@@ -41,7 +41,7 @@ export async function generateMetadata({
     title: `${product.title} | تريند ستور `,
     description: product.description || product.title,
     alternates: {
-      canonical: `https://www.extracode.online/${country}/product/${slug}`,
+      canonical: `https://digetal-app.vercel.app/${country}/product/${slug}`,
     },
     openGraph: {
       title: product.title,
