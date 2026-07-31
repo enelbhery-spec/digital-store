@@ -6,7 +6,7 @@ export const revalidate = 0;
 
 export async function GET() {
   const headersList = await headers();
-  const host = headersList.get("x-forwarded-host") || headersList.get("host") || "https://digetal-app.vercel.app";
+  const host = headersList.get("x-forwarded-host") || headersList.get("host") || "https://digetal-app.vercel.app/eg";
   const baseUrl = `https://${host}`;
   const urls: string[] = [];
 
