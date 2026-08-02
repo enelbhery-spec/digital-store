@@ -41,18 +41,18 @@ export const metadata: Metadata = {
   },
 
   title: {
-    default: "ExtraCode",
-    template: "%s | ExtraCode",
+    default: "Trend - Store",
+    template: "%s | Trend - Store",
   },
 
   description:
-    "اكتشف أفضل المنتجات الرقمية والعروض والكوبونات والمقالات وتجارب العملاء.",
-
+    "اكتشف افضل المنتجات الحصريه والعروض  و التخفيضات ",
   keywords: [
-    "ExtraCode",
-    "كوبونات",
-    "منتجات رقمية",
-    "عروض",
+    "الاحدث ",
+  "الاكثر مبيعا ",
+    "ترندات ",
+    "منتجات حصرية",
+    "عروض وتخفيضات",
     "تريند ستور",
   ],
 
@@ -64,25 +64,26 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ar_EG",
     url: "https://digetal-app.vercel.app",
-    siteName: "ExtraCode",
-    title: "ExtraCode",
+    siteName: "Trend - Store",
+    title: "Trend - Store",
     description:
-      "اكتشف أفضل المنتجات الرقمية والعروض والكوبونات والمقالات.",
+      "اكتشف أفضل المنتجات الحصرية والعروض والكوبونات والمقالات.",
     images: [
       {
+
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "ExtraCode",
+        alt: "Trend - Store",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "ExtraCode",
+    title: "Trend - Store",
     description:
-      "اكتشف أفضل المنتجات الرقمية والعروض والكوبونات.",
+      "اكتشف  المنتجات الحصرية والعروض والكوبونات.",
     images: ["/logo.png"],
   },
 };
