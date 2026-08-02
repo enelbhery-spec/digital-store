@@ -11,7 +11,7 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://digetal-app-theta.vercel.app"),
+  metadataBase: new URL("https://digetal-app.vercel.app"),
 
   icons: {
     icon: "/favicon.ico",
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://digetal-app-theta.vercel.app",
+    canonical: "https://digetal-app.vercel.app",
   },
 
   openGraph: {
     type: "website",
     locale: "ar_EG",
-    url: "https://digetal-app-theta.vercel.app",
+    url: "https://digetal-app.vercel.app",
     siteName: "ExtraCode",
     title: "ExtraCode",
     description:
