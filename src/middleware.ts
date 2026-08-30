@@ -5,8 +5,8 @@ export function middleware(request: NextRequest) {
 
   const { pathname } = request.nextUrl;
 
-  // ✅ تجاهل API بالكامل
-  if (pathname.startsWith("/api")) {
+  // ✅ تجاهل جميع مسارات الـ API بالكامل (سواء تبدأ بـ /api مباشرة أو تحت أي دولة مثل /eg/api)
+  if (pathname.startsWith("/api") || pathname.includes("/api/")) {
     return NextResponse.next();
   }
 
