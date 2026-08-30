@@ -13,21 +13,17 @@ const supabase = createClient(
 // GET TEST
 // =========================
 export async function GET() {
-
   return NextResponse.json({
     success: true,
     message: "Safka Products API Working",
   });
-
 }
 
 // =========================
 // POST FROM SAFKA
 // =========================
 export async function POST(request: Request) {
-
   try {
-
     // =========================
     // استقبال البيانات
     // =========================
@@ -42,15 +38,12 @@ export async function POST(request: Request) {
     // استخراج productId
     // =========================
     const productId =
-
       body.productId ||
       body.product_id ||
       body.id ||
       body._id ||
-
       body.product?._id ||
       body.product?.id ||
-
       body.data?._id ||
       body.data?.id;
 
@@ -58,7 +51,6 @@ export async function POST(request: Request) {
     // التحقق من وجود ID
     // =========================
     if (!productId) {
-
       console.log("PRODUCT ID NOT FOUND");
 
       return NextResponse.json(
@@ -71,7 +63,6 @@ export async function POST(request: Request) {
           status: 400,
         }
       );
-
     }
 
     console.log("PRODUCT ID:", productId);
@@ -80,17 +71,12 @@ export async function POST(request: Request) {
     // جلب المنتج من صفقة
     // =========================
     const response = await fetch(
-
       `https://aff.safka-eg.com/api/v1/public/product/${productId}`,
-
       {
         method: "GET",
-
         headers: {
-          "api-safka-key":
-            process.env.API_SAFKA_KEY!,
+          "api-safka-key": process.env.API_SAFKA_KEY!,
         },
-
         cache: "no-store",
       }
     );
@@ -99,9 +85,7 @@ export async function POST(request: Request) {
     // التحقق من نجاح الطلب
     // =========================
     if (!response.ok) {
-
-      const errorText =
-        await response.text();
+      const errorText = await response.text();
 
       console.log(
         "SAFKA FETCH ERROR:",
@@ -111,22 +95,19 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           success: false,
-          error:
-            "failed to fetch product from safka",
+          error: "failed to fetch product from safka",
           details: errorText,
         },
         {
           status: 500,
         }
       );
-
     }
 
     // =========================
     // تحويل JSON
     // =========================
-    const result =
-      await response.json();
+    const result = await response.json();
 
     console.log(
       "SAFKA PRODUCT:",
@@ -137,13 +118,11 @@ export async function POST(request: Request) {
     // استخراج المنتج
     // =========================
     const product =
-
       result.data ||
       result.product ||
       result;
 
     if (!product) {
-
       return NextResponse.json(
         {
           success: false,
@@ -153,14 +132,12 @@ export async function POST(request: Request) {
           status: 404,
         }
       );
-
     }
 
     // =========================
     // تجهيز المنتج
     // =========================
     const mappedProduct = {
-
       // معرف صفقة
       safka_id:
         product._id ||
@@ -220,6 +197,8 @@ export async function POST(request: Request) {
           ? product.properties
           : [],
 
+      // حالة المنتج
+      is_active: true,
     };
 
     console.log(
@@ -245,7 +224,6 @@ export async function POST(request: Request) {
     // خطأ Supabase
     // =========================
     if (error) {
-
       console.log(
         "SUPABASE ERROR FULL:",
         JSON.stringify(error, null, 2)
@@ -264,7 +242,6 @@ export async function POST(request: Request) {
           status: 500,
         }
       );
-
     }
 
     // =========================
@@ -278,8 +255,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         success: true,
-        message:
-          "تم حفظ المنتج بنجاح",
+        message: "تم حفظ المنتج بنجاح",
         data,
       },
       {
@@ -288,7 +264,6 @@ export async function POST(request: Request) {
     );
 
   } catch (error: any) {
-
     console.log(
       "ROUTE ERROR:",
       error
@@ -303,7 +278,5 @@ export async function POST(request: Request) {
         status: 500,
       }
     );
-
   }
-
 }
